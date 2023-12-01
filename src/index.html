@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Recibo Júpiter</title>
+        <link rel="shortcut icon" href="./assets/recibo.png" type="image/x-icon">
+        <link rel="stylesheet" href="style.css"/>
+        <script type="module" src="script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <!-- biblioteca jQuery, para fazer requisições HTTP / CDN da jQuery-Mask-Plugin para mascara -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+        <!-- Pikaday -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css" />
+    </head>
+    <body>
+        <form id="form" class="container">
+            <div class="container-recibo" id="container-recibo">
+                <div class="container-valores">
+                    <div class="titulo">
+                        <h1>RECIBO</h1>
+                    </div>
+                    <div class="padrao">
+                        <label for="numero" class="text">Nº</label>
+                        <input type="number" name="numero" id="numero" maxlength="7" autocomplete="off"/>
+                    </div>
+                    <div class="padrao">
+                        <label for="valor" class="text">VALOR</label>
+                        <input type="text" name="valor" id="valor" autocomplete="off" placeholder="R$ 0,00" maxlength="13"/>
+                    </div>
+                </div>
+                <!-- pagador -->
+                <div class="container-pagador">
+            
+                    <div class="input-padrao-text">
+                        <label for="numero" class="text">Recebi (emos) de:</label>
+                        <select name="empresas" id="empresas" required>
+                            <option value="" autofocus>Selecione a Empresa</option>
+                            <option value="empresa1">TECHINNOVATE SOLUTIONS - CNPJ: 00.000.000/0000-00</option>
+                            <option value="empresa2">VERDEVIDA CONSULTORIA AMBIENTAL - CNPJ: 00.000.000/0000-00</option>
+                            <option value="empresa3">JUPITER SERVICOS EM TECNOLOGIA DA INFORMACAO LTDA - CNPJ: 00.000.000/0000-00</option>
+                        </select>
+                    </div>
+                    <div class="input-padrao-text">
+                        <label for="endereco" class="text">Endereço:</label>
+                        <input type="text" id="endereco" readonly>
+                    </div>
+                    <div class="input-padrao-text">
+                        <label for="quantidadePorExtenso" class="text">A quantidade de:</label>
+                        <input type="text" id="quantidadePorExtenso" readonly/>
+                    </div>
+                    <div class="input-padrao-text">
+                        <label for="referente" class="text">Referente a:</label>
+                        <textarea name="referente" id="referente" cols="50" rows="4" required autocomplete="off"></textarea>
+                    </div>
+                    <div class="input-padrao-text">
+                        <label for="data" class="text">e para clareza firmo (amos) o presente:</label>
+                        <input type="text" name="data" id="data" required  placeholder="MM/DD/AAAA" autocomplete="off">
+                    </div>
+            
+                    <br>
+                    <div class="input-padrao-text">
+                        <label for="emitente" class="text">Emitente:</label>
+                        <input type="text" name="emitente" id="emitente" required autocomplete="off"/>
+                    </div>
+
+                    <div class="input-padrao-text">
+                        <label for="cpf" class="text">CPF/CNPJ</label>
+                        <input type="text" name="cpf" id="cpf" autocomplete="off" placeholder="000.000.000-00"/>
+                    </div>
+                    
+                    <div class="input-padrao-text">
+                        <label for="assinatura-funcionario" class="text">Assinatura:</label>
+                        <input type="text" name="assinatura-funcionario" id="assinatura-funcionario" required autocomplete="off"/>
+                    </div>
+                        
+
+                    <div class="container-button">
+                        <button id="imprimir">Imprimir</button>
+                        <button id="baixar-pdf">Baixar em PDF</button>
+                        <button id="limpar" >Limpar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <footer id="rodape">
+            <div>
+                <p>Desenvolvido Por Carlos Eduardo Albuquerque</p>
+            </div>
+        </footer>
+    </body>
+</html>
