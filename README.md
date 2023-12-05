@@ -10,4 +10,4 @@
 > jQuery Mask Plugin, para mascara do CPF, VALOR e CNPJ - [Link da CDN](https://cdnjs.com/libraries/jquery.mask/1.14.16)
 
 #### O site esta Hospedado, [vercel.com](https://vercel.com/)
-![Recibo](https://github.com/CarllosEduardo07/recibo/assets/80606019/0020c56d-4158-478f-b4c7-d42c5cff3791)
+![Recibo](https://github.com/CarllosEduardo07/Recibo_Portfolio/assets/80606019/7ac15da1-789a-4414-b483-54f0e46a9b11)
